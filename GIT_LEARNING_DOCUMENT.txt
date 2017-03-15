@@ -1,0 +1,36 @@
+Git:
+
+https://github.com/ login
+
+archana10242015@gmail.com
+Adhvik@1024
+
+create a new repo 
+https://github.com/Adwar/demo_repo
+
+now clone this demo_repo in your ubuntu box
+
+login to your ubuntu box
+
+
+sudo sudo -
+
+apt-get update
+apt-get install git-core
+
+cd /home/
+mkdir arch
+git clone https://github.com/Adwar/demo_repo.git
+
+root@ip-172-31-27-175:/home/arch# git clone https://github.com/Adwar/demo_repo.git
+Cloning into 'demo_repo'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+
+
+or you can do it an another way
+cd /home/arch
+mkdir test
+cd test
+git init
+git remote add origin https://github.com/Adwar/demo_repo.git
