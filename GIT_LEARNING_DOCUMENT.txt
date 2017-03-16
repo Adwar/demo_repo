@@ -5,6 +5,9 @@ https://github.com/ login
 archana10242015@gmail.com
 Adhvik@1024
 
+set environment varibale in your windows if you are working from your local repo
+
+
 create a new repo 
 https://github.com/Adwar/demo_repo
 

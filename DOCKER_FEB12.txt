@@ -1,0 +1,108 @@
+DOCKER 
+
+What is docker?
+
+Docker is a container. It runs as a guest computer on top of virtual machine on your host computer.
+Docker is an isolated portion of the host computer, sharing the host kernel(OS) and even its bin/libraries if appropriate.
+Docker containers are a separate portion(isolated) but share the host (OS)/bin/libraries, resulting in a significantly faster deployment, 
+much less overhead,easier migration and faster restarts.
+
+https://docs.docker.com/engine/getstarted/linux_install_help/
+
+To install docker on linux
+sudo su
+apt-get update
+
+apt-get install docker OR
+apt install docker.io
+
+Log into your Ubuntu installation as a user with sudo privileges.
+Verify that you have curl installed.
+ $ which curl
+If curl isn’t installed, install it after updating your manager:
+ $ sudo apt-get update
+ $ sudo apt-get install curl
+Get the latest Docker package.
+ $ curl -fsSL https://get.docker.com/ | sh
+ 
+The system prompts you for your sudo password. Then, it downloads and installs Docker and its dependencies.
+Note: If your company is behind a filtering proxy, you may find that the apt-key command fails for the Docker repo during installation. To work around this, add the key directly using the following:
+  $ curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
+
+apt-get -y install docker-engine  -- Install latest version of docker
+The Docker daemon starts automatically.
+
+To test run the below command to check if it has installed properly
+docker run hello-world
+
+To Uninstall a docker
+sudo apt-get purge docker-engine
+
+sudo rm -rf /var/lib/docker
+
+
+# docker
+Usage: docker [OPTIONS] COMMAND [arg...]
+ -H=[unix:///var/run/docker.sock]: tcp://host:port to bind/connect to or unix://path/to/socket to use
+
+A self-sufficient runtime for linux containers.
+
+Commands:
+    attach    Attach to a running container
+    build     Build an image from a Dockerfile
+    commit    Create a new image from a container's changes
+    cp        Copy files/folders from a container's filesystem to the host path
+    diff      Inspect changes on a container's filesystem
+    events    Get real time events from the server
+    export    Stream the contents of a container as a tar archive
+    history   Show the history of an image
+    images    List images
+    import    Create a new filesystem image from the contents of a tarball
+    info      Display system-wide information
+    inspect   Return low-level information on a container
+    kill      Kill a running container
+    load      Load an image from a tar archive
+    login     Register or log in to the Docker registry server
+    logs      Fetch the logs of a container
+    port      Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
+    pause     Pause all processes within a container
+    ps        List containers
+    pull      Pull an image or a repository from a Docker registry server
+    push      Push an image or a repository to a Docker registry server
+    restart   Restart a running container
+    rm        Remove one or more containers
+    rmi       Remove one or more images
+    run       Run a command in a new container
+    save      Save an image to a tar archive
+    search    Search for an image on the Docker Hub
+    start     Start a stopped container
+    stop      Stop a running container
+    tag       Tag an image into a repository
+    top       Lookup the running processes of a container
+    unpause   Unpause a paused container
+    version   Show the Docker version information
+    wait      Block until a container stops, then print its exit code
+These commands essentially allow you to manage the lifecycle of a container, things like building, sharing, starting, inspecting, stopping, killing, and
+removing containers. Lets just run docker version, so that if you happen to come along and try this for yourself, you what what version I was using.
+Looks like we are using client and server revs 1.1.2.
+
+
+# docker ps   (docker images command)
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS       
+       
+# docker ps -a
+CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS
+3410570f6714        ubuntu:12.04                /bin/bash           7 hours ago         Exited (0) 5 hours ago
+
+
+create the docker group
+groupadd docker
+
+Add your user to the docker group.
+sudo usermod -aG docker $USER
+$ sudo usermod -aG docker ubuntu
+
+sudo gpasswd -a ubuntu docker
+
+i
+sudo service docker.io restart

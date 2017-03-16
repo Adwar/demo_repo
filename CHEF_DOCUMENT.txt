@@ -1,0 +1,2 @@
+chef is a powerful configuration/automation platform which transforms any infrastructure into code, be it a cloud server, on-premise, or in any hybrid environment.
+It automates how infrstructure is configured, deployed and managed across network, no matter its size
